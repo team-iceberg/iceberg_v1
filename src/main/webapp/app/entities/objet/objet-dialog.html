@@ -1,0 +1,136 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myObjetLabel">Create or edit a Objet</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.objet.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.objet.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_libelle">Libelle</label>
+            <input type="text" class="form-control" name="libelle" id="field_libelle"
+                    ng-model="vm.objet.libelle"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_dateDepot">Date Depot</label>
+                <div class="input-group">
+                    <input id="field_dateDepot" type="text" class="form-control" name="dateDepot" datetime-picker="{{dateformat}}" ng-model="vm.objet.dateDepot" is-open="vm.datePickerOpenStatus.dateDepot"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateDepot')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setImage1($file, vm.objet)" ngf-pattern="'image/*'">
+            <label class="control-label" for="field_image1">Image 1</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.objet.image1ContentType + ';base64,' + vm.objet.image1}}" style="max-height: 100px;" ng-if="vm.objet.image1" alt="objet image"/>
+                <div ng-if="vm.objet.image1" class="help-block clearfix">
+                    <span class="pull-left">{{vm.objet.image1ContentType}}, {{vm.byteSize(vm.objet.image1)}}</span>
+                    <button type="button" ng-click="vm.objet.image1=null;vm.objet.image1ContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setImage1($file, vm.objet)" accept="image/*">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="image1" id="field_image1"
+                    ng-model="vm.objet.image1"
+                    />
+            <input type="hidden" class="form-control" name="image1ContentType" id="field_image1ContentType"
+                    ng-model="vm.objet.image1ContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setImage2($file, vm.objet)" ngf-pattern="'image/*'">
+            <label class="control-label" for="field_image2">Image 2</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.objet.image2ContentType + ';base64,' + vm.objet.image2}}" style="max-height: 100px;" ng-if="vm.objet.image2" alt="objet image"/>
+                <div ng-if="vm.objet.image2" class="help-block clearfix">
+                    <span class="pull-left">{{vm.objet.image2ContentType}}, {{vm.byteSize(vm.objet.image2)}}</span>
+                    <button type="button" ng-click="vm.objet.image2=null;vm.objet.image2ContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setImage2($file, vm.objet)" accept="image/*">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="image2" id="field_image2"
+                    ng-model="vm.objet.image2"
+                    />
+            <input type="hidden" class="form-control" name="image2ContentType" id="field_image2ContentType"
+                    ng-model="vm.objet.image2ContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setImage3($file, vm.objet)" ngf-pattern="'image/*'">
+            <label class="control-label" for="field_image3">Image 3</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.objet.image3ContentType + ';base64,' + vm.objet.image3}}" style="max-height: 100px;" ng-if="vm.objet.image3" alt="objet image"/>
+                <div ng-if="vm.objet.image3" class="help-block clearfix">
+                    <span class="pull-left">{{vm.objet.image3ContentType}}, {{vm.byteSize(vm.objet.image3)}}</span>
+                    <button type="button" ng-click="vm.objet.image3=null;vm.objet.image3ContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setImage3($file, vm.objet)" accept="image/*">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="image3" id="field_image3"
+                    ng-model="vm.objet.image3"
+                    />
+            <input type="hidden" class="form-control" name="image3ContentType" id="field_image3ContentType"
+                    ng-model="vm.objet.image3ContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setImage4($file, vm.objet)" ngf-pattern="'image/*'">
+            <label class="control-label" for="field_image4">Image 4</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.objet.image4ContentType + ';base64,' + vm.objet.image4}}" style="max-height: 100px;" ng-if="vm.objet.image4" alt="objet image"/>
+                <div ng-if="vm.objet.image4" class="help-block clearfix">
+                    <span class="pull-left">{{vm.objet.image4ContentType}}, {{vm.byteSize(vm.objet.image4)}}</span>
+                    <button type="button" ng-click="vm.objet.image4=null;vm.objet.image4ContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setImage4($file, vm.objet)" accept="image/*">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="image4" id="field_image4"
+                    ng-model="vm.objet.image4"
+                    />
+            <input type="hidden" class="form-control" name="image4ContentType" id="field_image4ContentType"
+                    ng-model="vm.objet.image4ContentType" />
+        </div>
+
+        <div class="form-group">
+            <label for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" ng-model="vm.objet.userId" ng-options="user.id as user.id for user in vm.users"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,30 @@
+<div ng-cloak>
+    <div class="row">
+        <div class="col-md-6 center logoHomeIceberg">
+           <span class="hipster img-responsive img-rounded"></span>
+        </div>
+        <div class="col-md-6 homeIceberg">
+            <h1>Bienvenue sur ICEBERG !</h1>
+
+            <div ng-switch="vm.isAuthenticated()">
+                <div class="alert alert-success" ng-switch-when="true">
+                    Vous &ecirc;tes connect&eacute;s en tant que "{{vm.account.login}}".
+                <div><br>
+                   <p class="annonceIceberg">
+						Iceberg vous permet d&#145;inventorier facilement tous vos produits !<br><br>
+						<button ui-sref="application" class="ouvrirIceberg">OUVRIR ICEBERG </button>
+					</p><br>
+				</div>
+				 <p class="contactIceberg">
+                	<img src="../content/images/contact.png" height="30" width="42">&nbsp;Si tu rencontres des probl&egrave;mes, &eacute;cris &agrave; la team Iceberg  : <a href="mailto:inventaire.iceberg@gmail.com">Contact</a>  
+            	</p>
+                </div>
+                <div class="alert annonceIceberg" ng-switch-when="false">
+						Iceberg vous permet d&#145;inventorier facilement tous vos produits ! 
+				</div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

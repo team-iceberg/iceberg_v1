@@ -1,0 +1,32 @@
+{
+  "generator-jhipster": {
+    "jhipsterVersion": "4.0.0",
+    "baseName": "iceberg",
+    "packageName": "com.iceberg.app",
+    "packageFolder": "com/iceberg/app",
+    "serverPort": "8080",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "enableSocialSignIn": true,
+    "rememberMeKey": "c7832b3f4449ceb946ea30f5b1f62cbbd6088bd7",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "applicationType": "monolith",
+    "clientFramework": "angular1",
+    "testFrameworks": [
+      "gatling"
+    ],
+    "jhiPrefix": "jhi",
+    "enableTranslation": false,
+    "herokuAppName": null,
+    "herokuDeployType": "git"
+  }
+}

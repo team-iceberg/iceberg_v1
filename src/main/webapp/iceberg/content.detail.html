@@ -1,0 +1,69 @@
+<div>
+    <div id="detailObjet" resize>
+        <div id="detailObjetTitre">
+            <label class="detailObjetInfoLabel"></label><label class="form-control"> {{vm.detail.libelle}} </label><br></br>
+        </div>
+        <div id="deleteButton" ng-if="isDeletable">
+            <md-button ng-show="vm.account.authorities.indexOf('ROLE_ADMIN') != -1  || vm.account.authorities.indexOf('ROLE_USER') != -1"
+                       class="md-fab md-button md-ink-ripple buttonDelete" aria-label="Supprimer" ng-click="confirmDelete($event)">
+                <md-tooltip>Supprimer le produit</md-tooltip>
+                <img class="png-icon imgDelete" src="/iceberg/img/bouton_supprimer_01.png">
+            </md-button>
+        </div>
+        <div ng-if="isModify" id="modifyButon">
+            <md-button ng-show="vm.account.authorities.indexOf('ROLE_ADMIN') != -1  || vm.account.authorities.indexOf('ROLE_USER') != -1"
+                       class="md-fab md-button md-ink-ripple buttonModify" aria-label="Modifier" ng-click="modifyProduct($event)">
+                <md-tooltip>Modifier le produit</md-tooltip>
+                <img class="png-icon imgDelete" src="/iceberg/img/BOUTON_MODIF-01.png">
+            </md-button>
+        </div>
+
+        <div id="detailObjetImageInfo" layout="row">
+
+            <div id="detailObjetImage">
+                <md-tabs md-dynamic-height="" md-border-bottom="">
+                    <md-tab label="1">
+                        <md-content class="md-padding">
+                            <div>
+                                <md-card>
+                                    <img class="detailObjetImageSrc" id="img" ng-hide="vm.detail.image1 == null"
+                                         data-ng-src="data:image/jpeg;base64,{{vm.detail.image1}}"/>
+                                </md-card>
+                            </div>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="2">
+                        <md-content class="md-padding">
+                            <div>
+                                <md-card>
+                                    <img class="detailObjetImageSrc" id="img2" ng-hide="vm.detail.image2 == null"
+                                         data-ng-src="data:image/jpeg;base64,{{vm.detail.image2}}"/>
+                                </md-card>
+                            </div>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+            </div>
+            <div id="detailObjetInfo">
+                <label class="detailObjetInfoLabel">Type : </label><label class="form-control"> {{vm.detail.type.valeur}} </label><br></br>
+                <label class="detailObjetInfoLabel">Couleur : </label>
+                <div id="cercleCritereAll" ng-if="vm.colorResult.codeHexa === 'all'" style="background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)"></div>
+                <div id="cercleCritere" ng-if="vm.colorResult.codeHexa !== 'all'" style="background-color: {{vm.colorResult.codeHexa}};"></div>
+                {{vm.detail.couleur.valeur}}
+                <div ui-grid="gridTailles" class="grid gridDetail"></div>
+                <div class="detailObjetInfoLabelEmpl">
+                    <label>Emplacement : {{vm.detail.emplacement.paramEmpl.ref}}</label>
+                </div>
+            </div>
+        </div>
+        <div id="detailObjetNav">
+            <md-button ng-show="vm.account.authorities.indexOf('ROLE_ADMIN') != -1 || vm.account.authorities.indexOf('ROLE_USER') != -1"
+                       href="#reserver" class="button buttonSearchResult">RESERVER
+            </md-button>
+
+        </div>
+        <md-button href="#retour" class="md-fab md-button md-ink-ripple buttonRetour positionRetourOnDetail" ng-click="loadScrollSearch()">
+            <md-tooltip>Retour</md-tooltip>
+            <img class="imgRetour" src="/iceberg/img/bouton_retour.png"></md-button>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "emplacement",
+            "otherEntityName": "emplacement",
+            "otherEntityRelationshipName": "objet"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "caracteristique",
+            "otherEntityName": "objetCaracteristiques",
+            "otherEntityRelationshipName": "objet"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "libelle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateDepot",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "image1",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "image2",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "image3",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "image4",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        }
+    ],
+    "changelogDate": "20170326182359",
+    "entityTableName": "objet",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "no"
+}

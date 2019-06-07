@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "objet",
+            "otherEntityName": "objet",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "valeur",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "caracteristique",
+            "fieldType": "Caracteristique",
+            "fieldValues": "TYPE,COULEUR,TAILLE"
+        }
+    ],
+    "changelogDate": "20170326182304",
+    "entityTableName": "objet_caracteristiques",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "no"
+}

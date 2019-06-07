@@ -1,0 +1,19 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "couleur",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codeHexa",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170326182305",
+    "entityTableName": "param_couleur",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no"
+}

@@ -1,0 +1,12 @@
+version: '2'
+services:
+    iceberg-postgresql:
+        container_name: iceberg-postgresql
+        image: postgres:9.5.4
+        # volumes:
+        #     - ~/volumes/jhipster/iceberg/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=iceberg
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

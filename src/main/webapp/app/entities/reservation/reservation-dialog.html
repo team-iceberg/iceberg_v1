@@ -1,0 +1,60 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myReservationLabel">Create or edit a Reservation</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.reservation.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.reservation.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_dateReservation">Date Reservation</label>
+                <div class="input-group">
+                    <input id="field_dateReservation" type="text" class="form-control" name="dateReservation" datetime-picker="{{dateformat}}" ng-model="vm.reservation.dateReservation" is-open="vm.datePickerOpenStatus.dateReservation"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateReservation')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_qui">Qui</label>
+            <input type="text" class="form-control" name="qui" id="field_qui"
+                    ng-model="vm.reservation.qui"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_qteResa">Qte Resa</label>
+            <input type="number" class="form-control" name="qteResa" id="field_qteResa"
+                    ng-model="vm.reservation.qteResa"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_qteRet">Qte Ret</label>
+            <input type="number" class="form-control" name="qteRet" id="field_qteRet"
+                    ng-model="vm.reservation.qteRet"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label for="field_detailEmplacement">Detail Emplacement</label>
+            <select class="form-control" id="field_detailEmplacement" name="detailEmplacement" ng-model="vm.reservation.detailEmplacementId" ng-options="detailEmplacement.id as detailEmplacement.id for detailEmplacement in vm.detailemplacements"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

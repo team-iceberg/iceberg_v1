@@ -1,0 +1,106 @@
+<div id="mySearch" >
+    <div ng-app="app" class="md-padding selectdemoOptionGroups paddingCriteria" ng-cloak="" layout="row">
+        <md-card class="searchCriteria">
+            <md-card-content>
+                <div layout="row" class="layoutCriteria">
+
+                    <md-input-container id="filtreType" class="criteriaInput">
+                        <label>Type</label>
+                        <md-select ng-model="vm.ref.type" md-on-open="clickOnTypes()">
+                            <md-option><em>Tous</em></md-option>
+                            <md-option ng-repeat="type in vm.listTypes" ng-value="type.type">
+                                {{type.type}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+
+                    <md-input-container id="filtreCouleur" class="criteriaInput margeMobile">
+                        <label>Couleur</label>
+                        <md-select ng-model="vm.ref.couleur" md-on-open="clickOnCouleurs()">
+                            <md-option><em>Tous</em></md-option>
+                            <md-option ng-repeat="couleur in vm.listCouleurs" ng-value="couleur.couleur">
+                                <div id="cercleCritereAll" ng-if="couleur.codeHexa === 'all'" style="background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)"></div>
+                                <div id="cercleCritere" ng-if="couleur.codeHexa !== 'all'" style="background-color: {{couleur.codeHexa}};"></div>
+                                {{couleur.couleur}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+
+                    <md-input-container id="filtreTaille" class="criteriaInput margeMobile">
+                        <label>Taille</label>
+                        <md-select ng-model="vm.ref.taille" multiple="true" ng-click="clickOnTailles()">
+                            <md-option ng-repeat="taille in vm.listTailles" ng-value="taille.taille">
+                                {{taille.taille}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                    
+                    <md-input-container id="filtreEmplacement" class="criteriaInput" ng-controller="SelectHeaderEmplacementController">
+                        <label>Emplacement</label>
+                        <md-select ng-model="vm.ref.emplacement" data-md-container-class="selectEmplacementSelectHeader"
+                                   md-on-close="clearSearchTerm()" ng-click="clickOnEmplacement()">
+                            <md-select-header class="emplacement-select-header">
+                                <input ng-model="searchTerm"
+                                       type="search"
+                                       placeholder="Filtrer les emplacements..."
+                                       class="emplacement-header-searchbox md-text">
+                            </md-select-header>
+                            <md-optgroup label="emplacements">
+                                <md-option><em>Tous</em></md-option>
+                                <md-option ng-repeat="empl in vm.listEmplacements | filter:searchTerm" ng-value="empl.ref">
+                                    {{empl.libelle}}
+                                </md-option>
+                            </md-optgroup>
+                        </md-select>
+                    </md-input-container>
+                    <md-button id="searchObjet" class="md-fab buttonSearch1" aria-label="Rechercher" ng-click="vm.lesObjets()">
+                        <md-icon md-svg-src="/iceberg/img/ic_search_black_24px.svg"></md-icon>
+                    </md-button>
+                </div>
+                <div id="clickFiltrerParEmplacement">
+                    <md-button class="buttonFiltrer" ng-click="vm.filtrerParEmplacement()"> >Filtrer par emplacement</md-button>
+                </div>
+                <div id="clickFiltrerParColTaiType">
+                    <md-button class="buttonFiltrer" ng-click="vm.filtrerParColTaiType()"> >Filtrer par type, coloris ou taille</md-button>
+                </div>
+                <md-progress-linear md-mode="indeterminate" ng-disabled="!vm.showList"></md-progress-linear>
+            </md-card-content>
+        </md-card>
+        <div ng-show="vm.account.authorities.indexOf('ROLE_ADMIN') != -1 || vm.account.authorities.indexOf('ROLE_USER') != -1">
+            <md-button class="md-fab md-button md-ink-ripple buttonCreate" aria-label="Ajouter" ng-click="vm.goToCreation()">
+                <md-tooltip>Ajout de produits</md-tooltip>
+                <img class="imgCreate" src="/iceberg/img/bouton_ajout_costume_01.png">
+            </md-button>
+        </div>
+
+        <div>
+            <md-button class="md-fab md-button md-ink-ripple buttonResa" aria-label="Reservation" href="#resaEnCours">
+                <md-tooltip>Voir les réservations</md-tooltip>
+                <img class="imgResa" src="/iceberg/img/bouton_reserv_en_cours_01.png">
+            </md-button>
+        </div>
+
+    </div>
+
+    <div id="messageNbResult">
+        <label id="searchNbResult" ng-if="vm.resultObjets.length > 0 && vm.resultObjets.length < 75" class="form-control searchNbResult"> {{vm.nbEltFound}} costume(s) trouv&eacute;(s) </label>
+        <label id="searchNbResult0" ng-if="vm.resultObjets.length === 0" class="form-control searchNbResult"> Aucun costume trouv&eacute; dans l'iceberg</label>
+        <label id="searchNbResultLimit" ng-if="vm.resultObjets.length >= 75" class="form-control searchNbResult"> {{vm.nbEltTotal}} types de costumes trouv&eacute;s
+            ( affichage limit&eacute; &agrave; {{vm.nbEltFound}}), il faut pr&eacute;ciser ta recherche avec les filtres ci-dessus</label>
+    </div>
+
+    <md-grid-list id="gridListSearch" md-cols="5" md-cols-xs="1" md-cols-sm="2" class="md-padding md-searchResult" md-row-height="260px"
+                  md-gutter="25px">
+        <md-grid-tile ng-repeat="obj in vm.resultObjets" ng-class="searchResult">
+            <div id="itemSearchResult">
+                <md-button href="#detail/{{obj.id}}" class="md-raised itemSearchResult" ng-click="toPositionOnSearch()">
+                    <img aria-label='imageDetail' class="lazyload itemSearchResultImage" data-src="data:image/jpeg;base64,{{obj.image1}}" width="190"
+                         height="250"/>
+                    <div class="imgDetailNom">
+                        <p>{{obj.libelle}}</p>
+                    </div>
+                </md-button>
+            </div>
+        </md-grid-tile>
+    </md-grid-list>
+</div>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity DetailEmplacement.
+    -->
+    <changeSet id="20170326182302-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="emplacement_id"
+                                 baseTableName="detail_emplacement"
+                                 constraintName="fk_detail_emplacement_emplacement_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="emplacement"/>
+
+    </changeSet>
+</databaseChangeLog>

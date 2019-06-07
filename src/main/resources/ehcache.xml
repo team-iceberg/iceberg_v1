@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns='http://www.ehcache.org/v3'
+         xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.0.xsd">
+
+    <cache-template name="simple">
+        <expiry>
+            <ttl unit="seconds">3600</ttl>
+        </expiry>
+        <heap>100</heap>
+    </cache-template>
+
+    <cache alias="com.iceberg.app.domain.User" uses-template="simple"/>
+
+    <cache alias="com.iceberg.app.domain.Authority" uses-template="simple"/>
+
+    <cache alias="com.iceberg.app.domain.User.authorities" uses-template="simple"/>
+
+    <cache alias="com.iceberg.app.domain.PersistentToken" uses-template="simple"/>
+
+    <cache alias="com.iceberg.app.domain.User.persistentTokens" uses-template="simple"/>
+
+    <cache alias="com.iceberg.app.social.SocialUserConnection" uses-template="simple"/>
+
+    <cache alias="com.iceberg.app.domain.ParamEmpl" uses-template="simple"/>
+
+    <cache alias="com.iceberg.app.domain.Emplacement" uses-template="simple"/>
+
+    <cache alias="com.iceberg.app.domain.Emplacement.detailEmplacements" uses-template="simple"/>
+
+    <cache alias="com.iceberg.app.domain.DetailEmplacement" uses-template="simple"/>
+
+    <cache alias="com.iceberg.app.domain.DetailEmplacement.reservations" uses-template="simple"/>
+
+    <cache alias="com.iceberg.app.domain.Reservation" uses-template="simple"/>
+
+    <cache alias="com.iceberg.app.domain.ObjetCaracteristiques" uses-template="simple"/>
+
+    <cache alias="com.iceberg.app.domain.ParamCouleur" uses-template="simple"/>
+
+    <cache alias="com.iceberg.app.domain.ParamTaille" uses-template="simple"/>
+
+    <cache alias="com.iceberg.app.domain.ParamType" uses-template="simple"/>
+
+    <cache alias="com.iceberg.app.domain.Objet" uses-template="simple"/>
+
+    <cache alias="com.iceberg.app.domain.Objet.emplacements" uses-template="simple"/>
+
+    <cache alias="com.iceberg.app.domain.Objet.caracteristiques" uses-template="simple"/>
+
+    <!-- jhipster-needle-ehcache-add-entry -->
+</config>

@@ -1,0 +1,79 @@
+entity Objet{
+    id String required,
+    libelle String,
+    dateDepot ZonedDateTime,
+    image1 ImageBlob,
+    image2 ImageBlob,
+    image3 ImageBlob,
+    image4 ImageBlob
+}
+
+entity ParamEmpl{
+  ref String,
+  libelle String
+}
+
+entity Emplacement{
+    qteTotal Integer
+}
+
+entity DetailEmplacement{
+    valeurCaracteristique String,
+    qteEnCours Integer,
+    caracteristique Caracteristique
+}
+
+entity Reservation{
+    dateReservation ZonedDateTime,
+    qui String,
+    qteResa Integer,
+    qteRet Integer
+}
+
+entity ObjetCaracteristiques{
+    valeur String,
+    caracteristique Caracteristique
+}
+
+enum Caracteristique{
+  TYPE, COULEUR, TAILLE
+}
+
+entity ParamCouleur{
+  couleur String,
+  codeHexa String
+}
+
+entity ParamTaille{
+  taille String,
+  libelle String
+}
+
+entity ParamType{
+  type String,
+  libelle String
+}
+
+relationship OneToMany {
+    Objet{emplacement} to Emplacement,
+    DetailEmplacement{reservation} to Reservation,
+    Emplacement{detailEmplacement} to DetailEmplacement,
+    Objet{caracteristique} to ObjetCaracteristiques
+} 
+
+relationship ManyToOne {
+	Objet{user}  to User,
+    Emplacement{paramEmpl} to ParamEmpl
+} 
+
+
+// Set pagination options
+paginate Reservation with pagination
+paginate Objet with pagination
+paginate Emplacement with pagination
+paginate DetailEmplacement with pagination
+paginate ObjetCaracteristiques with pagination
+
+dto * with mapstruct
+
+

@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "emplacement",
+            "otherEntityName": "emplacement",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "reservation",
+            "otherEntityName": "reservation",
+            "otherEntityRelationshipName": "detailEmplacement"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "valeurCaracteristique",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "qteEnCours",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "caracteristique",
+            "fieldType": "Caracteristique",
+            "fieldValues": "TYPE,COULEUR,TAILLE"
+        }
+    ],
+    "changelogDate": "20170326182302",
+    "entityTableName": "detail_emplacement",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "no"
+}
