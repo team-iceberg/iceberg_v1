@@ -17,7 +17,6 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "objet")
-@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Objet implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -63,7 +62,6 @@ public class Objet implements Serializable {
 
     @OneToMany(mappedBy = "objet", fetch = FetchType.EAGER, cascade=CascadeType.REMOVE)
     @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Emplacement> emplacements = new HashSet<>();
 
     @OneToMany(mappedBy = "objet", fetch = FetchType.EAGER, cascade=CascadeType.REMOVE)

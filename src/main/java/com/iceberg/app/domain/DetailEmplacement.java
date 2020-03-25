@@ -17,7 +17,6 @@ import com.iceberg.app.domain.enumeration.Caracteristique;
  */
 @Entity
 @Table(name = "detail_emplacement")
-@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class DetailEmplacement implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -42,7 +41,6 @@ public class DetailEmplacement implements Serializable {
 
     @OneToMany(mappedBy = "detailEmplacement", fetch = FetchType.EAGER)
     @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Reservation> reservations = new HashSet<>();
 
     public Long getId() {

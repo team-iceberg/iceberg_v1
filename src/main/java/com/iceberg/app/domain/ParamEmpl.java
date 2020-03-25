@@ -12,7 +12,6 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "param_empl")
-@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class ParamEmpl implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -14,7 +14,6 @@ import com.iceberg.app.domain.enumeration.Caracteristique;
  */
 @Entity
 @Table(name = "objet_caracteristiques")
-@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class ObjetCaracteristiques implements Serializable {
 
     private static final long serialVersionUID = 1L;

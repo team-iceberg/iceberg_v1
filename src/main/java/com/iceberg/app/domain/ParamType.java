@@ -12,7 +12,6 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "param_type")
-@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class ParamType implements Serializable {
 
     private static final long serialVersionUID = 1L;
