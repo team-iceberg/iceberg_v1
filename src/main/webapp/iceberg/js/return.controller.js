@@ -41,13 +41,13 @@
                 $scope.objectBooked.lesReservationsEnCours[i].qteRet = $scope.objectBooked.lesReservationsEnCours[i].qteResa;
                 $scope.objectBooked.lesReservationsEnCours[i].detailEmplacement.qteEnCours = $scope.objectBooked.lesReservationsEnCours[i].detailEmplacement.qteEnCours + $scope.objectBooked.lesReservationsEnCours[i].qteRet;
                 listDetailEmplacement.push($scope.objectBooked.lesReservationsEnCours[i].detailEmplacement);
-            }
+                appService.deleteReservation($scope.objectBooked.lesReservationsEnCours[i].id).success(function (data) {
 
-            appService.updateReservationsList($scope.objectBooked.lesReservationsEnCours).success(function (data) {
-                updateDetailEmpl(listDetailEmplacement);
-            }).catch(function (error) {
-                console.log(error);
-            });
+                }).catch(function (error) {
+                    console.log(error);
+                });
+            }
+            updateDetailEmpl(listDetailEmplacement);
 
         };
 

@@ -93,6 +93,10 @@
             return $http.put(urlbase + 'updateReservationList/', reservationsList);
         };
 
+        this.deleteReservation = function (idResa) {
+            return $http.delete(urlbase + '/reservations/'+ idResa);
+        };
+
         this.updateQtyDetailObject = function (detailEmplList) {
             return $http.put(urlbase + 'update-qty-detail-emplacements/', detailEmplList);
         };

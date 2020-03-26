@@ -135,6 +135,7 @@ public class ReservationResource {
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+
     /**
      * GET  /reservations : get all the reservations.
      *
@@ -177,7 +178,7 @@ public class ReservationResource {
     @Timed
     public ResponseEntity<List<ObjetReservationsDTO>> getReservationEnCours() {
         log.debug("REST request to get ReservationEnCours");
-        
+
         List<Reservation> lReservations = reservationRepository.findAll();
         List<ReservationDTO> lResaDTO = reservationMapper.reservationsToReservationDTOs(lReservations);
 
@@ -198,16 +199,16 @@ public class ReservationResource {
 	        		unObjResa.setDateReservation(simpleDF.format(Date.from( itemResa.getDateReservation().toInstant())));
 	        		unObjResa.setObjet(itemResa.getDetailEmplacement().getEmplacement().getObjet());
 	        		List<Reservation> listResaEnCours = new ArrayList<Reservation>(20);
-	
+
 	        		listResaEnCours.add(reservationMapper.reservationDTOToReservation(itemResa));
-	
+
 	                DetailEmplacement tmpDE = new DetailEmplacement();
 	                tmpDE.setId(itemResa.getDetailEmplacement().getId());
 	                tmpDE.setQteEnCours(itemResa.getDetailEmplacement().getQteEnCours());
 	                tmpDE.setEmplacement(itemResa.getDetailEmplacement().getEmplacement());
 	                tmpDE.setValeurCaracteristique(itemResa.getDetailEmplacement().getValeurCaracteristique());
-	
-	
+
+
 	        		unObjResa.setLesReservationsEnCours(listResaEnCours.stream()
 	                    .map(f -> {
 	                        if(f.getId().equals(itemResa.getId())){
@@ -221,12 +222,12 @@ public class ReservationResource {
 	        		ObjetReservationsDTO unObjResa = cache.get(key);
 	        		List<Reservation> listResaEnCours = unObjResa.getLesReservationsEnCours();
 	        		listResaEnCours.add(reservationMapper.reservationDTOToReservation(itemResa));
-	
+
 	                DetailEmplacement tmpDE = new DetailEmplacement();
 	                tmpDE.setId(itemResa.getDetailEmplacement().getId());
 	                tmpDE.setQteEnCours(itemResa.getDetailEmplacement().getQteEnCours());
 	                tmpDE.setValeurCaracteristique(itemResa.getDetailEmplacement().getValeurCaracteristique());
-	
+
 	                unObjResa.setLesReservationsEnCours(listResaEnCours.stream()
 	                    .map(f -> {
 	                        if(f.getId().equals(itemResa.getId())){
