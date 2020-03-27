@@ -12,12 +12,9 @@
 
 eureka:
     instance:
-        hostname: les-sympathiques-iceberg-dev-2.herokuapp.com
+        hostname: radiant-fjord-41577.herokuapp.com
         non-secure-port: 80
         prefer-ip-address: false
-    client:
-        service-url:
-            defaultZone: ${JHIPSTER_REGISTRY_URL}/eureka/
 
 spring:
     datasource:
