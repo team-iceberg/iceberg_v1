@@ -1,0 +1,75 @@
+<div>
+    <div id="reserverObjet" resize>
+        <div id="reserverImageDetail" layout="row">
+            <div id="detailObjetImage" class="detailObjetImageReserver">
+                <md-tabs md-dynamic-height="" md-border-bottom="">
+                    <md-tab label="1">
+                        <md-content class="md-padding">
+                            <div>
+                                <md-card>
+                                    <img class="detailObjetImageSrc" id="img" ng-hide="vm.detail.image1 == null"
+                                         data-ng-src="data:image/jpeg;base64,{{vm.detail.image1}}"/>
+                                </md-card>
+                            </div>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="2">
+                        <md-content class="md-padding">
+                            <div>
+                                <md-card>
+                                    <img class="detailObjetImageSrc" id="img2" ng-hide="vm.detail.image2 == null"
+                                         data-ng-src="data:image/jpeg;base64,{{vm.detail.image2}}"/>
+                                </md-card>
+                            </div>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+            </div>
+            <form name="myForm">
+                <div id="detailObjetInfo">
+                    <div>
+                        <label class="detailObjetInfoLabel">Choisissez vos tailles :</label>
+                    </div>
+                    <div id="listTaillePourReserver">
+                        <div ng-repeat="detailParTailles in vm.detail.detailEmplacement">
+                            <div class="containerDetailParTailles">
+                                <div class="infoDetailParTailles">
+                                    <ng-form name="qtyFieldForm">
+                                        <label class="labelInfoDetailParTailles">Taille {{detailParTailles.valeurCaracteristique}}
+                                            ({{detailParTailles.qteEnCours}})</label>
+                                        <input class="inputInfoDetailParTailles" type="number" name="qty" min="0"
+                                               max="{{detailParTailles.qteEnCours}}" ng-model="listQtyResa[detailParTailles.id]">
+                                        <div class="info" ng-messages="qtyFieldForm.qty.$error">
+                                            <div ng-message="max">La quantité doit être comprise entre 0 et {{detailParTailles.qteEnCours}}</div>
+                                        </div>
+                                    </ng-form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="all-qty">
+                        <label>Sélectionner toute les quantités : </label>
+                        <input type="checkbox" ng-model="isChecked" ng-change="multiSelect()">
+                    </div>
+                    <div>
+                        <md-input-container class="createObjetInput">
+                            <label>Qui ?</label>
+                            <md-select ng-model="reservePar" name="reservePar" required="true">
+                                <md-option ng-repeat="mono in vm.allMono" ng-value="mono.login">
+                                    {{mono.login}}
+                                </md-option>
+                            </md-select>
+                            <div class="info" ng-messages="myForm.reservePar.$error">
+                                <div ng-message="required">Champ obligatoire</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="detailObjetNav">
+            <md-button ng-click="canceled()" class="button buttonSearchResult">Annuler</md-button>
+            <md-button class="button button-valider-resa" ng-click="reserver()">Valider</md-button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,97 @@
+<div layout="row" class="createObjet">
+    <div class="createObjetImages">
+        <input type='file' id="imgInp" hidden/>
+        <md-content>
+            <md-tabs md-dynamic-height="" md-border-bottom="">
+                <md-tab label="1">
+                    <md-content class="md-padding">
+                        <div>
+                            <md-card>
+                                <img class="detailObjetImageSrc createObjetImageScr" ng-click="setImage(1)" id="img"
+                                     src="data:image/jpeg;base64,{{objet.image1}}" onerror="this.onerror=null;this.src='../iceberg/img/no_image.png';"/>
+                            </md-card>
+                        </div>
+                    </md-content>
+                </md-tab>
+                <md-tab label="2">
+                    <md-content class="md-padding">
+                        <div>
+                            <md-card>
+                                <img class="detailObjetImageSrc createObjetImageScr" ng-click="setImage(2)" id="img2"
+                                     src="data:image/jpeg;base64,{{objet.image2}}" onerror="this.onerror=null;this.src='../iceberg/img/no_image.png';"/>
+                            </md-card>
+                        </div>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+        </md-content>
+    </div>
+    <div flex>
+        <div>
+            <div id="createObjet">
+                <div>
+                    <div>
+                        <md-input-container class="createObjetInput">
+                            <label>Nom</label>
+                            <input ng-model="costumeLabel"/>
+                        </md-input-container>
+                    </div>
+                    <div style="margin-top: -40px">
+                        <md-input-container class="createObjetInput">
+                            <label>Type</label>
+                            <md-select ng-model="valeurType">
+                                <md-option ng-repeat="type in listTypes" ng-value="type">
+                                    {{type.type}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                    <div style="margin-top: -20px">
+                        <md-input-container class="createObjetInput">
+                            <label>Couleur</label>
+                            <md-select ng-model="valeurCouleur">
+                                <md-option ng-repeat="couleur in listCouleurs" ng-value="couleur">
+                                    <div id="cercleCritereAll" ng-if="couleur.codeHexa === 'all'" style="background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)"></div>
+                                    <div id="cercleCritere" ng-if="couleur.codeHexa !== 'all'" style="background-color: {{couleur.codeHexa}};"></div>
+                                    {{couleur.couleur}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                    <div>
+                        <div ui-grid="gridOptionsTailles" ui-grid-edit class="grid"></div>
+                    </div>
+                    <div id="divAddEmplacement">
+                        <md-input-container class="createObjetInput">
+                            <label>Emplacement</label>
+                            <md-select ng-model="valeurEmplacement.id" data-md-container-class="selectEmplacementSelectHeader"
+                                       md-on-close="clearSearchTerm()" aria-label="Emplacement">
+                                <md-select-header class="emplacement-select-header">
+                                    <input ng-model="searchTerm"
+                                           type="search"
+                                           placeholder="Filtrer les emplacements..."
+                                           class="emplacement-header-searchbox md-text">
+                                </md-select-header>
+                                <md-optgroup label="emplacements">
+                                    <md-option ng-repeat="empl in listEmplacements | filter:searchTerm" ng-value="empl.id">
+                                        {{empl.libelle}}
+                                    </md-option>
+                                </md-optgroup>
+                            </md-select>
+                        </md-input-container>
+                        <md-button class="md-fab md-button md-ink-ripple button-new-box" aria-label="Ajouter" ng-click="showDialogNewBox()">
+                            <md-tooltip>Ajouter un emplacement</md-tooltip>
+                            <img class="png-icon plus" src="/iceberg/img/bouton_ajout_emplacement_blanc.png">
+                        </md-button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="detailObjetNav" layout="row" layout-align="center center">
+    <md-button href="#retour" ng-click="goToHome()" class="button buttonSearchResult">Annuler</md-button>
+    <md-button ng-if="!toModify" class="button button-add-product" ng-click="ajouterCostume()">Ajouter</md-button>
+    <md-button ng-if="toModify" class="button button-add-product" ng-click="ajouterCostume()">Modifier</md-button>
+</div>

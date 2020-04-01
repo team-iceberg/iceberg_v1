@@ -13,7 +13,6 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "reservation")
-@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Reservation implements Serializable {
 
     private static final long serialVersionUID = 1L;

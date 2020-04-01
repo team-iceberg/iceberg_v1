@@ -1,0 +1,47 @@
+<div>
+    <div id="detailObjet" resize>
+        <div id="detailObjetImageInfo" layout="row">
+            <div id="detailObjetImage">
+                <md-tabs md-dynamic-height="" md-border-bottom="">
+                    <md-tab label="1">
+                        <md-content class="md-padding">
+                            <div>
+                                <md-card>
+                                    <img class="detailObjetImageSrc" id="img"
+                                         ng-hide="objectBooked.objet.image1 == null"
+                                         data-ng-src="data:image/jpeg;base64,{{objectBooked.objet.image1}}"/>
+                                </md-card>
+                            </div>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="2">
+                        <md-content class="md-padding">
+                            <div>
+                                <md-card>
+                                    <img class="detailObjetImageSrc" id="img2"
+                                         ng-hide="objectBooked.objet.image2 == null"
+                                         data-ng-src="data:image/jpeg;base64,{{objectBooked.objet.image2}}"/>
+                                </md-card>
+                            </div>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+            </div>
+            <div id="detailObjetInfo">
+                <div>
+                    <label class="detailObjetInfoLabel">R&eacute;serv&eacute;e par : </label><label
+                    class="form-control"> {{objectBooked.qui}}</label>
+                </div>
+                <br>
+                <label class="detailObjetInfoLabel">R&eacute;capitulatif par taille :</label>
+                <div ui-grid="gridTailles" class="grid gridDetailReturn"></div>
+                <label class="detailObjetInfoLabelEmpl emplRetour">A ranger en :
+                    {{objectBooked.lesReservationsEnCours[0].detailEmplacement.emplacement.paramEmpl.libelle}} </label>
+            </div>
+        </div>
+        <div id="detailObjetNav">
+            <md-button class="button buttonSearchResult" ng-click="goToReservationList()">Annuler</md-button>
+            <md-button class="button button-valider-resa" ng-click="returnObject()">Rendre</md-button>
+        </div>
+    </div>
+</div>

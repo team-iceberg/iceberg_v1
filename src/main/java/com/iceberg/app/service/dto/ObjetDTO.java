@@ -23,14 +23,14 @@ public class ObjetDTO implements Serializable {
     private String libelle;
 
     private ZonedDateTime dateDepot;
-    
+
     private ObjetCaracteristiques type;
     private ObjetCaracteristiques couleur;
     private Set<ObjetCaracteristiques> tailles;
     private Emplacement emplacement;
     private Set<DetailEmplacement> detailEmplacement;
     private Set<Reservation> lesReservations;
-    
+
     @Lob
     private byte[] image1;
     private String image1ContentType;
@@ -46,10 +46,10 @@ public class ObjetDTO implements Serializable {
     @Lob
     private byte[] image4;
     private String image4ContentType;
-    
+
     private Long position;
     private Long nbEltsTotal;
-    
+
     private Long userId;
 
     public Long getId() {

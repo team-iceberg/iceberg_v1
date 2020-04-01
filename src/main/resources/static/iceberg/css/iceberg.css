@@ -1,0 +1,1135 @@
+@CHARSET "ISO-8859-1";
+
+html.md-default-theme, html, body.md-default-theme, body {
+    background-color: #fff;
+}
+
+md-tooltip.md-default-theme .md-content, md-tooltip .md-content {
+    background-color: #854196;
+}
+
+#cercleCritere {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-right: 10px;
+}
+#cercleCritereAll {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.md-button {
+    border-radius: 0px;
+}
+
+.buttonSearch1 {
+    display: block;
+}
+
+.imgDetailNom{
+    position: absolute;
+    top: 230px;
+    width: 190px;
+    height: 30px;
+    z-index: 2;
+    font-size: 11px;
+    text-align: center;
+    line-height: 6px;
+    color:black;
+    background-color: white;
+    opacity: 0.7;
+    text-transform: lowercase;
+}
+.imgDetailResaEnCours{
+    position: absolute;
+    top: 230px;
+    width: 210px;
+    height: 30px;
+    z-index: 2;
+    font-size: 11px;
+    text-align: center;
+    line-height: 6px;
+    color:black;
+    background-color: white;
+    opacity: 0.95;
+}
+
+.buttonSearch2 {
+    display: none;
+}
+
+.md-searchResult {
+    margin-top: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.resaEnCoursLabel{
+	text-align: center;
+    margin-top: -10px;
+    border: none;
+    overflow: auto;
+    outline: none;
+    resize: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.md-button.md-default-theme.md-fab:not([disabled]):hover, .md-button.md-fab:not([disabled]):hover {
+    background-color: white;
+}
+
+.itemSearchResult {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    line-height: 0px;
+}
+
+#itemSearchResult:hover {
+    border: 2px solid #166BB5;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+}
+
+.md-button.md-fab {
+    background-color: white;
+}
+
+.button {
+    border-radius: 20px;
+}
+
+.buttonSearchResult {
+    border: solid 2px #156DB4;
+    color: #156DB4;
+}
+
+.buttonSearchResult:not([disabled]):hover {
+    background-color: #156DB4;
+    color: white;
+}
+
+.buttonSearchResultNoActive {
+    background-image: linear-gradient(to right, #D3D3D3, #D3D3D3);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px 1px #dfdfdf !important;
+}
+
+.md-button.md-raised {
+    color: white;
+}
+
+md-card md-card-content {
+    padding: 2px;
+}
+
+md-content.md-default-theme, md-content {
+    background-color: white;
+}
+
+md-card {
+    box-shadow: 0 0px 0px 0;
+}
+
+md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
+    color: #854196;
+    background: #854196;
+}
+
+.searchCriteria {
+    background-image: linear-gradient(to right, #27AAD6, #854196);
+}
+
+	.positionRetourOnDetail{
+    		top: 0px;
+    		left: 90px;
+    		position: fixed !important;
+	  }
+
+.buttonRetour {
+    position: absolute;
+    font-size: 37px;
+    width: 39px !important;
+    height: 39px !important;
+    line-height: 1px !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.buttonRetour:hover {
+    background-color: #854196 !important;
+    font-size: 17px;
+    line-height: 1px !important;
+}
+
+#filtreEmplacement{
+	position:absolute;
+	visibility:hidden;
+}
+
+.buttonCreate {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    font-size: 42px;
+    line-height: 1px !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.buttonResa {
+    position: absolute;
+    top: 1px;
+    right: 60px;
+    font-size: 42px;
+    line-height: 1px !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.buttonDelete {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    font-size: 42px;
+    line-height: 1px !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.buttonDelete:hover {
+    background-color: #854196 !important;
+    font-size: 42px;
+    line-height: 1px !important;
+}
+
+.buttonModify {
+    position: absolute;
+    top: 1px;
+    font-size: 42px;
+    line-height: 1px !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.buttonModify:hover {
+    background-color: #854196 !important;
+    font-size: 42px;
+    line-height: 1px !important;
+}
+
+.buttonAddEmplacement {
+    box-shadow: 0 0 0 0 !important;
+}
+
+.imgRetour{
+	width: 35px;
+    height: 35px;
+    margin-top: 2px;
+     margin-left: -4px;
+}
+
+.imgCreate{
+	width: 50px;
+    height: 50px;
+    margin-left: -3px;
+}
+
+.imgResa{
+	width: 50px;
+    height: 50px;
+    margin-left: -3px;
+    margin-top:3px;
+}
+
+.emplRetour{
+	width:100%!important;
+}
+
+#divAddEmplacement{
+width: 340px;
+}
+
+.imgDelete{
+	width: 50px;
+    height: 50px;
+    margin-left: -4px;
+    margin-top: 1px;
+}
+
+.imgAddEmplacement{
+	width: 50px;
+    height: 50px;
+    margin-left: -3px;
+    content: url("/iceberg/img/bouton_ajout_emplacement_blanc.png");
+}
+
+.imgCreate:hover{
+	width: 50px;
+    height: 50px;
+    margin-left: -3px;
+}
+
+.imgResa:hover{
+	width: 50px;
+    height: 50px;
+    margin-left: -3px;
+    margin-top: 3px;
+}
+
+.imgDelete:hover{
+    width: 50px;
+    height: 50px;
+    margin-left: -3px;
+}
+
+
+.buttonCreate:hover {
+    background-color: #854196 !important;
+    font-size: 42px;
+    line-height: 1px !important;
+}
+
+.buttonResa:hover {
+    background-color: #854196 !important;
+    font-size: 42px;
+    line-height: 1px !important;
+}
+
+.ajout-costume {
+    background-image: linear-gradient(to right, #27AAD6, #854196);
+}
+
+.paddingCriteria {
+    margin-left: auto;
+    margin-right: auto;
+    width: 750px;
+}
+
+.criteriaInput {
+    width: 175px;
+    margin-right: 20px;
+    margin-left: 10px;
+    background-color: white;
+}
+
+md-card.md-default-theme, md-card {
+    border-radius: 0px;
+}
+
+#messageNbResult {
+    text-align: center;
+}
+
+.criteriaInputCreation {
+    width: 200px;
+    margin: 0;
+    margin-top: 4%;
+    margin-bottom: 2%;
+    background-color: white;
+}
+
+#detailObjetImage {
+    float: left;
+    width: 55%;
+    position: relative;
+    text-align: center;
+    cursor: auto;
+    padding-right:35px;
+    margin-top: -15px;
+}
+
+#detailObjetInfo {
+    padding-top: 25px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#detailObjetNav {
+    text-align: center;
+}
+
+.searchNbResult {
+    font-size: 18px;
+    color: #166BB5;
+}
+
+#detailObjetImageInfo {
+    padding-top: 10px;
+    height: 475px;
+    width: 100%;
+}
+
+.inputInfoDetailParTailles{
+	width:40px;
+}
+
+#reserverImageDetail {
+    padding-top: 10px;
+    height: 475px;
+    width: 100%;
+}
+
+.infoDetailParTailles{
+	width:100%;
+	float:left;
+}
+
+.labelInfoDetailParTailles{
+	line-height: 35px;
+    margin-right: 5%;
+}
+
+#deleteButton{
+	position: absolute;
+    top: -10px;
+    left: 75%;
+}
+
+#modifyButon{
+	position: absolute;
+    top: -10px;
+    left: 75%;
+}
+
+#block-principal {
+    margin-left: 12%;
+    margin-right: 12%;
+    border: 2px solid #166BB5;
+    height: 500px;
+    font-size: 20px;
+    box-shadow: 0px 0px 30px -5px #3166ff;
+}
+
+#createObjet {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    width: 70%;
+}
+
+.buttonFiltrer{
+	margin-top: -20px;
+    text-transform: none;
+    line-height: 15px;
+    margin-left: 0px;
+    min-height: 4px;
+    font-weight: initial;
+    color: white;
+    letter-spacing: normal;
+}
+
+#clickFiltrerParEmplacement{
+	height:4px;
+}
+
+#clickFiltrerParColTaiType{
+	height:3px;
+	visibility:hidden;
+	margin-top: -4px;
+}
+
+
+#detailObjet {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    width: 70%;
+}
+
+#listTaillePourReserver{
+	overflow-y: auto;
+    height: 310px;
+    width: 400px;
+}
+
+.itemResaResult{
+	white-space: normal;
+}
+
+#gridListResa{
+	margin-top:25px;
+}
+
+#itemResaResult:hover {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+}
+
+.itemResa{
+	width: 195px;
+    text-align: center;
+}
+
+.titleReservation{
+	text-align: center;
+    font-size: 22px;
+    color: #166BB5;
+    margin-bottom: 10px;
+}
+
+#resaEnCours {
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+}
+
+#reserverObjet {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    width: 70%;
+}
+
+
+.reserveQte{
+	width:50px;
+	text-align:center;
+}
+
+.reserverPlusMoins{
+	font-size: 28px;
+    color: #854196!important;
+}
+
+#detailObjetImageInfo {
+    padding-top: 10px;
+}
+
+.detailObjetInfoLabel {
+    color: #166BB5;
+}
+
+.detailObjetInfoLabelEmpl {
+    color: white;
+    background-color: #854195;
+    font-size: 22px;
+    padding: 6px;
+    width: 220px;
+    display: table;
+    text-align: center;
+}
+
+.detailObjetTab {
+    width: 200px;
+    border-collapse: collapse;
+    font-size: 18px;
+    margin: 0px;
+}
+
+.detailObjetTabTR {
+    border-bottom: 1pt solid grey;
+}
+
+.menuCreer {
+    margin-left: 90%;
+    margin-top: -30px;
+}
+
+.detailObjetImageSrc{
+	 width:270px;
+	 height:360px;
+	 margin-left: auto;
+   	 margin-right: auto;
+}
+
+#detailObjetFooter {
+    width: 100%;
+    height: 50px;
+    background-color: #f1f1f1;
+    margin-top: 100px;
+}
+
+#detailObjetTitre {
+    text-align: center;
+    font-size: 22px;
+}
+
+md-progress-circular.md-default-theme path, md-progress-circular path {
+	stroke:rgb(133,65,150);
+}
+
+md-input-container:not(.md-input-invalid).md-input-has-value label {
+    color: #1492C7;
+}
+
+md-select-menu md-content md-option[selected] {
+    color: #854196;
+}
+
+.createObjetInput {
+    width: 250px;
+}
+
+.icon-search {
+    padding-right: 25%;
+}
+
+.icon-creation {
+    padding-left: 3%;
+    padding-top: 4%;
+}
+
+.center-bar {
+    border-left: 2px solid #166BB5;
+    height: 30%;
+    margin-top: 20%;
+}
+
+.gridDetail {
+    width: 270px !important;
+    height: 100px !important;
+    max-height: 300px;
+}
+
+.gridDetailReturn {
+    width: 180px !important;
+    height: 100px !important;
+    max-height: 300px;
+}
+
+.grid {
+    width: 230px;
+    height: 230px !important;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    display: table;
+}
+
+.ui-grid {
+    border: none !important;
+}
+
+.ui-grid-footer-panel{
+    background: none !important;
+    border-bottom: none !important;
+    font-weight: normal !important;
+    /*font-size: 14px !important;*/
+}
+
+.ui-grid-top-panel{
+    background: none !important;
+    font-weight: normal !important;
+    /*font-size: 14px !important;*/
+}
+
+.ui-grid-render-container-body .ui-grid-viewport {
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 80px !important;
+    max-height: 230px !important;
+}
+
+.ui-grid-invisible {
+    display: none;
+}
+
+.center {
+    text-align: center;
+}
+
+.thumb {
+    width: 24px;
+    height: 24px;
+    float: none;
+    position: relative;
+    display: inline;
+}
+
+.createObjet {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.createObjetImages {
+    width: 55%;
+}
+
+.createObjetImageScr {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#form1 {
+    margin-top: 4%;
+    margin-left: 47%;
+}
+
+.content {
+    width: 45%;
+    margin-top: 10%;
+}
+
+.retourCreate {
+    margin-top: 40%;
+}
+
+.button-add-product {
+    background-color: #af54c3;
+    color: white;
+    width: 8%;
+}
+
+.button-valider-resa{
+    background-color: #af54c3;
+    color: white;
+}
+
+.containerDetailParTailles{
+	margin:10px;
+	font-size:18px;
+    display: flex;
+}
+
+.button-new-box {
+    top: 1px;
+    right: 1px;
+    font-size: 42px;
+    line-height: 1px !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.button-new-box:hover {
+    background-color: #854196 !important;
+}
+
+.button-new-box .plus{
+    margin-left: -3px;
+}
+
+.info {
+    color: #ff4758;
+    font-size: 0.7rem;
+}
+
+#reserverObjet input:invalid {
+    border: 2px solid #ff4758;
+}
+
+.error-toast .md-toast-content  {
+    background-color: red !important;
+}
+
+.warning-toast .md-toast-content  {
+    background-color: #ff8c02 !important;
+}
+
+.info-toast .md-toast-content  {
+    background-color: green !important;
+}
+
+.all-qty {
+    margin-top: 5%;
+}
+
+/* style for phone*/
+@media (max-width: 1024px) {
+	.container {
+    	width: 95%;
+	}
+
+	.layout-row{
+	    margin-top: -12px;
+    		margin-bottom: 7px;
+    		display:block;
+	}
+
+	.criteriaInput{
+		width: 85px;
+		height: 30px;
+    		margin-right: 4px;
+    		margin-bottom: 0px;
+    		margin-left: 2px;
+    		font-size: 11px!important;
+	}
+
+	.layoutCriteria{
+		display:flex;
+	}
+
+	.paddingCriteria {
+	    margin-left: auto;
+    		margin-right: auto;
+    		width: 335px;
+    		margin-top: -15px;
+    		display: flex;
+	}
+	.margeMobile{
+		margin-left: -3px;
+	}
+
+
+	md-icon{
+	    height: 16px;
+	    width: 16px;
+	    min-height: 16px;
+	    min-width: 16px;
+	}
+
+	.md-button.md-fab{
+	    line-height: 35px;
+	    width: 50px;
+	    height: 50px;
+	}
+	.detailObjetImageSrc{
+		width:220px;
+	 	height:290px;
+	}
+
+	#detailObjetImageInfo{
+		width: 100%;
+		height:100%;
+		padding-top: 5px;
+	}
+
+	#reserverImageDetail{
+		width: 100%;
+		height:100%;
+		padding-top: 5px;
+	}
+
+	#createObjet{
+	    margin-top: 5px;
+     	margin-left: auto;
+     	margin-right: auto;
+     	height: 100%;
+     	width: 100%;
+     	border : 0px;
+     	font-size: 16px;
+	}
+
+	#detailObjet {
+     	margin-top: 5px;
+     	margin-left: auto;
+     	margin-right: auto;
+     	height: 100%;
+     	width: 100%;
+     	border : 0px;
+     	font-size: 16px;
+	}
+
+	#filtreEmplacement{
+		width:125px
+	}
+
+	#detailObjetInfo {
+    	padding-top: 10px;
+		height: 100%;
+		text-align:center;
+		width:100%;
+	}
+
+	#detailObjetImage {
+    	float: none;
+    	margin-left: auto;
+    	margin-right: auto;
+    	margin-top: 5px;
+    	height: 100%;
+    	width: 250px;
+    	padding-right: 0px;
+	}
+
+	#detailObjetNav{
+		text-align:center;
+		margin-top: 5px;
+	}
+
+	.searchNbResult{
+		font-size: 13px;
+	}
+
+	.buttonSearch1{
+ 		display:none;
+ 		margin-left:0px;
+	}
+
+
+	.detailObjetTab{
+	    margin:auto;
+	}
+
+	.grid{
+		margin-left: auto;
+    	margin-right: auto;
+	}
+
+	.createObjetImages{
+		width:100%;
+	}
+
+	.createObjet{
+		width:95%;
+	}
+
+
+    md-icon {
+        height: 16px;
+        width: 16px;
+        min-height: 16px;
+        min-width: 16px;
+    }
+
+    .md-button.md-fab {
+        line-height: 35px;
+        width: 34px;
+        height: 34px;
+    }
+
+    .detailObjetImageSrc {
+        width: 220px;
+        height: 290px;
+    }
+
+    #detailObjetImageInfo {
+        width: 100%;
+        height: 100%;
+        padding-top: 5px;
+    }
+
+    #createObjet {
+        margin-top: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100%;
+        width: 100%;
+        border: 0px;
+        font-size: 16px;
+    }
+
+    #detailObjet {
+        margin-top: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100%;
+        width: 100%;
+        border: 0px;
+        font-size: 16px;
+    }
+
+    #detailObjetInfo {
+        padding-top: 10px;
+        height: 100%;
+        text-align: center;
+    }
+
+	#deleteButton{
+	    left: 100%;
+	}
+
+    #detailObjetImage {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5px;
+        height: 100%;
+        width: 250px;
+    }
+
+    #detailObjetNav {
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    .searchNbResult {
+        font-size: 13px;
+    }
+
+    .buttonSearch1 {
+        display: inline;
+        margin-top:17px;
+    }
+
+
+    .detailObjetTab {
+        margin: auto;
+    }
+
+    .grid {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .createObjetImages {
+        width: 100%;
+    }
+
+    .createObjet {
+        width: 95%;
+    }
+
+	.positionRetourOnDetail{
+	    	top: 0px;
+    		left: -8px;
+    		position: fixed !important;
+	  }
+
+    .buttonRetour{
+        font-size: 24px;
+        width: 29px !important;
+    		height: 29px !important;
+    }
+
+    .buttonCreate {
+        font-size: 24px;
+    		top: 65px;
+    		right: 0px;
+        width: 48px !important;
+    		height: 48px !important;
+        position: fixed !important;
+    }
+
+    .buttonResa {
+        font-size: 24px;
+    		top: 110px;
+    		right: 0px;
+        width: 48px !important;
+    		height: 48px !important;
+        position: fixed !important;
+    }
+
+
+    #detailObjetTitre {
+        margin-bottom: -35px;
+        width:84%;
+    }
+
+    .detailObjetInfoLabelEmpl {
+        display: inline-block;
+    }
+
+    .buttonSearch2 {
+        border-radius: 20px;
+    }
+
+	.button-new-box .plus{
+    	width: 32px;
+    	height: 32px;
+	}
+
+	  .imgRetour{
+		width: 25px;
+    		height: 25px;
+	}
+
+	.imgRetour:hover{
+		width: 25px;
+    		height: 25px;
+	}
+
+    .imgCreate{
+		width: 42px;
+    		height: 42px;
+	}
+
+	.imgCreate:hover{
+		width: 42px;
+    		height: 42px;
+	}
+
+	 .imgResa{
+		width: 42px;
+    		height: 42px;
+	}
+
+	.imgResa:hover{
+		width: 42px;
+    	height: 42px;
+	}
+
+    .imgDelete{
+		width: 30px;
+    	height: 30px;
+    	margin-left: -3px;
+	}
+
+    .imgDelete:hover{
+		width: 30px;
+    	height: 30px;
+    	margin-left: -3px;
+	}
+
+	 .imgAddEmplacement{
+		width: 30px;
+    	height: 30px;
+    	margin-left: 0px;
+	}
+
+	#divAddEmplacement{
+		display:inline-table;
+	}
+
+	#reserverObjet {
+     	margin-top: 5px;
+     	margin-left: auto;
+     	margin-right: auto;
+     	height: 100%;
+     	width: 100%;
+     	border : 0px;
+     	font-size: 16px;
+	}
+
+	#listTaillePourReserver{
+		 overflow-y: initial;
+    	 height: 100%;
+    	 width: 100%;
+	}
+
+	.reserverObjetInput{
+		margin-top:0px;
+	}
+
+	.buttonFiltrer{
+	    font-size:11px;
+	}
+
+	.infoDetailParTailles{
+		width:100%;
+	    font-size: 14px;
+	}
+
+	.containerDetailParTailles{
+		font-size: 16px;
+	}
+
+	#resaEnCours {
+		margin-top: 8px;
+	}
+
+	.md-padding{
+	    padding-top: 2px;
+    		padding-left: 1px;
+	}
+
+}
+
+.selectEmplacementSelectHeader .emplacement-header-searchbox {
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+.selectEmplacementSelectHeader .emplacement-select-header {
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.12);
+    padding-left: 10.667px;
+    height: 48px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+
+.selectEmplacementSelectHeader md-content._md {
+    max-height: 240px;
+}
+
