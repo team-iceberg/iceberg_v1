@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr" style="overflow: hidden">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="./dist/angular-material.min.css"/>
+
+    <script src="./dist/angular.min.js"></script>
+    <script src="./dist/angular-animate.min.js"></script>
+    <script src="./dist/angular-aria.min.js"></script>
+    <script src="./dist/angular-messages.min.js"></script>
+    <script src="./dist/angular-route.js"></script>
+    <script src="./dist/angular-material.1.1.9.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="./dist/jquery.min.js"></script>
+    <script src="./dist/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.1.0/exif.min.js"></script>
+
+    <script src="../bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <script src="../bower_components/lazysizes/lazysizes.js"></script>
+    <script src="../bower_components/angular-ui-grid/ui-grid.js"></script>
+    <link rel="stylesheet" href="./dist/bootstrap-slider.min.css"/>
+
+    <script src="./js/iceberg.init.js"></script>
+    <script src="./js/search.controler.js"></script>
+    <script src="./js/detail.controler.js"></script>
+    <script src="./js/iceberg.services.js"></script>
+    <script src="./js/create.controller.js"></script>
+    <script src="./js/reserve.controller.js"></script>
+    <script src="./js/resaEnCours.controller.js"></script>
+    <script src="./js/return.controller.js"></script>
+    <script src="../common/storage-service.js"></script>
+    <link rel="stylesheet" href="./css/iceberg.css"/>
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="/bower_components/angular-ui-grid/ui-grid.css"/>
+</head>
+<body ng-app="app" ng-controller="appController as vm">
+    <ng-view></ng-view>
+    <input type="text" id="scroll0" value="400" style="display: none;">
+    <input type="text" id="position0" value="0" style="display: none;">
+</body>
+
+<foot th:include="iceberg/footer"></foot>
+</html>

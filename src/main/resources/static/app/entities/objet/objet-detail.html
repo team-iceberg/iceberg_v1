@@ -1,0 +1,67 @@
+
+<div>
+    <h2><span>Objet</span> {{vm.objet.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span>Libelle</span></dt>
+        <dd>
+            <span>{{vm.objet.libelle}}</span>
+        </dd>
+        <dt><span>Date Depot</span></dt>
+        <dd>
+            <span>{{vm.objet.dateDepot | date:'medium'}}</span>
+        </dd>
+        <dt><span>Image 1</span></dt>
+        <dd>
+            <div ng-if="vm.objet.image1">
+                <a ng-click="vm.openFile(vm.objet.image1ContentType, vm.objet.image1)">
+                    <img data-ng-src="{{'data:' + vm.objet.image1ContentType + ';base64,' + vm.objet.image1}}" style="max-width: 100%;" alt="objet image"/>
+                </a>
+                {{vm.objet.image1ContentType}}, {{vm.byteSize(vm.objet.image1)}}
+            </div>
+        </dd>
+        <dt><span>Image 2</span></dt>
+        <dd>
+            <div ng-if="vm.objet.image2">
+                <a ng-click="vm.openFile(vm.objet.image2ContentType, vm.objet.image2)">
+                    <img data-ng-src="{{'data:' + vm.objet.image2ContentType + ';base64,' + vm.objet.image2}}" style="max-width: 100%;" alt="objet image"/>
+                </a>
+                {{vm.objet.image2ContentType}}, {{vm.byteSize(vm.objet.image2)}}
+            </div>
+        </dd>
+        <dt><span>Image 3</span></dt>
+        <dd>
+            <div ng-if="vm.objet.image3">
+                <a ng-click="vm.openFile(vm.objet.image3ContentType, vm.objet.image3)">
+                    <img data-ng-src="{{'data:' + vm.objet.image3ContentType + ';base64,' + vm.objet.image3}}" style="max-width: 100%;" alt="objet image"/>
+                </a>
+                {{vm.objet.image3ContentType}}, {{vm.byteSize(vm.objet.image3)}}
+            </div>
+        </dd>
+        <dt><span>Image 4</span></dt>
+        <dd>
+            <div ng-if="vm.objet.image4">
+                <a ng-click="vm.openFile(vm.objet.image4ContentType, vm.objet.image4)">
+                    <img data-ng-src="{{'data:' + vm.objet.image4ContentType + ';base64,' + vm.objet.image4}}" style="max-width: 100%;" alt="objet image"/>
+                </a>
+                {{vm.objet.image4ContentType}}, {{vm.byteSize(vm.objet.image4)}}
+            </div>
+        </dd>
+        <dt><span>User</span></dt>
+        <dd>
+            {{vm.objet.userId}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="objet-detail.edit({id:vm.objet.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

@@ -12,7 +12,7 @@
 
 eureka:
     instance:
-        hostname: radiant-fjord-41577.herokuapp.com
+        hostname: les-sympathiques-iceberg-dev.herokuapp.com
         non-secure-port: 80
         prefer-ip-address: false
 

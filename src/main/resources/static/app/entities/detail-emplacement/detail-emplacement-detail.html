@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span>Detail Emplacement</span> {{vm.detailEmplacement.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span>Valeur Caracteristique</span></dt>
+        <dd>
+            <span>{{vm.detailEmplacement.valeurCaracteristique}}</span>
+        </dd>
+        <dt><span>Qte En Cours</span></dt>
+        <dd>
+            <span>{{vm.detailEmplacement.qteEnCours}}</span>
+        </dd>
+        <dt><span>Caracteristique</span></dt>
+        <dd>
+            <span>{{vm.detailEmplacement.caracteristique}}</span>
+        </dd>
+        <dt><span>Emplacement</span></dt>
+        <dd>
+            <a ui-sref="emplacement-detail({id:vm.detailEmplacement.emplacementId})">{{vm.detailEmplacement.emplacementId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="detail-emplacement-detail.edit({id:vm.detailEmplacement.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

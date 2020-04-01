@@ -1,0 +1,94 @@
+<div>
+    <h2>Objets</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="objet.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Objet
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="libelle"><span>Libelle</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dateDepot"><span>Date Depot</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="image1"><span>Image 1</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="image2"><span>Image 2</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="image3"><span>Image 3</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="image4"><span>Image 4</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="userId"><span>User</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="objet in vm.objets track by objet.id">
+                    <td><a ui-sref="objet-detail({id:objet.id})">{{objet.id}}</a></td>
+                    <td>{{objet.libelle}}</td>
+                    <td>{{objet.dateDepot | date:'medium'}}</td>
+                    <td>
+                        <a ng-if="objet.image1" ng-click="vm.openFile(objet.image1ContentType, objet.image1)">
+                            <img data-ng-src="{{'data:' + objet.image1ContentType + ';base64,' + objet.image1}}" style="max-height: 30px;" alt="objet image"/>
+                        </a>
+                        <span ng-if="objet.image1">{{objet.image1ContentType}}, {{vm.byteSize(objet.image1)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="objet.image2" ng-click="vm.openFile(objet.image2ContentType, objet.image2)">
+                            <img data-ng-src="{{'data:' + objet.image2ContentType + ';base64,' + objet.image2}}" style="max-height: 30px;" alt="objet image"/>
+                        </a>
+                        <span ng-if="objet.image2">{{objet.image2ContentType}}, {{vm.byteSize(objet.image2)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="objet.image3" ng-click="vm.openFile(objet.image3ContentType, objet.image3)">
+                            <img data-ng-src="{{'data:' + objet.image3ContentType + ';base64,' + objet.image3}}" style="max-height: 30px;" alt="objet image"/>
+                        </a>
+                        <span ng-if="objet.image3">{{objet.image3ContentType}}, {{vm.byteSize(objet.image3)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="objet.image4" ng-click="vm.openFile(objet.image4ContentType, objet.image4)">
+                            <img data-ng-src="{{'data:' + objet.image4ContentType + ';base64,' + objet.image4}}" style="max-height: 30px;" alt="objet image"/>
+                        </a>
+                        <span ng-if="objet.image4">{{objet.image4ContentType}}, {{vm.byteSize(objet.image4)}}</span>
+                    </td>
+                    <td>
+                        {{objet.userId}}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="objet-detail({id:objet.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="objet.edit({id:objet.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="objet.delete({id:objet.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

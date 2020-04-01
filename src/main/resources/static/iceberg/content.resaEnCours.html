@@ -1,0 +1,23 @@
+<div>
+<md-button href="#retour" class="md-fab md-button md-ink-ripple buttonRetour" ng-click="loadScrollSearch()"> <md-tooltip>Retour</md-tooltip><img class="imgRetour" src="/iceberg/img/bouton_retour.png"></md-button>
+    <div id="resaEnCours">
+        <div class="titleReservation"><label>{{vm.nbResaEnCours}} r&eacute;servation(s)</label></div>
+        <md-grid-list id="gridListResa" md-cols="5" md-cols-xs="1" md-cols-sm="2" class="md-padding md-searchResult" md-row-height="260px"
+                      md-gutter="25px">
+            <md-grid-tile ng-repeat="item in vm.detail" ng-class="searchResult">
+                <div id="itemSearchResult">
+                    <md-button class="md-raised itemSearchResult" id="itemResaResult" ng-click="goToBookingDetail(item)">
+                        <img aria-label='imageDetail' class="lazyload itemSearchResultImage" data-src="data:image/jpeg;base64,{{item.objet.image1}}"
+                             width="190" height="250"/>
+                    </md-button>
+                    <div class="imgDetailResaEnCours">
+                        <p> {{item.qui}} depuis le {{formatDate(item.dateReservation)}}</p>
+                    </div>
+                </div>
+            </md-grid-tile>
+        </md-grid-list>
+        <div layout="column" layout-align="center center">
+            <md-progress-circular md-mode="indeterminate" ng-disabled="!vm.activated"></md-progress-circular>
+        </div>
+    </div>
+</div>

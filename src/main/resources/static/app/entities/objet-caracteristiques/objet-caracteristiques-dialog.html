@@ -1,0 +1,46 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myObjetCaracteristiquesLabel">Create or edit a Objet Caracteristiques</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.objetCaracteristiques.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.objetCaracteristiques.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_valeur">Valeur</label>
+            <input type="text" class="form-control" name="valeur" id="field_valeur"
+                    ng-model="vm.objetCaracteristiques.valeur"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_caracteristique">Caracteristique</label>
+            <select class="form-control" name="caracteristique" ng-model="vm.objetCaracteristiques.caracteristique" id="field_caracteristique">
+                <option value="TYPE">TYPE</option>
+                <option value="COULEUR">COULEUR</option>
+                <option value="TAILLE">TAILLE</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="field_objet">Objet</label>
+            <select class="form-control" id="field_objet" name="objet" ng-model="vm.objetCaracteristiques.objetId" ng-options="objet.id as objet.id for objet in vm.objets"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>
